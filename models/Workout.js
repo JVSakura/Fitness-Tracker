@@ -5,34 +5,20 @@ const Workout = new Schema({
     type: Date,
     default: () => new Date()
   },
-  exercises: [
+  tasks: [
     {
-      type: {
-        type: String,
-        required: 'Enter workout type'
-      },
       name: {
         type: String,
-        required: 'Enter workout name'
+        trim: true,
+        required: 'Enter a task name'
       },
       duration: {
         type: Number,
-        required: 'Enter workout duration'
-      },
-      distance: {
-        type: Number
-      },
-      weight: {
-        type: Number
-      },
-      reps: {
-        type: Number
-      },
-      sets: {
-        type: Number
+        required: 'Enter a task duration'
       }
     }
   ]
-}, { timestamps: true })
+})
 
 module.exports = model('Workout', Workout)
+© 2021 GitHub, Inc.
